@@ -1,0 +1,457 @@
+--> JavaScript: It is a client side scripting language. But after node js it is known
+as server side.
+
+-> Client side: which are executed by the browser.
+-> Server side: which are executed by the server.
+
+--> It is used to apply some dynamic content in our webpage like some animations,
+event handling, DOM manipulation etc.
+
+--> It is known as ECMA Script (ES).
+  -> Old JavaScript (Vanilla JavaScript) (ES 5).
+  -> New features (ES 6,7,...).
+
+--> It is a Programming language.
+  -> Extension of JavaScript is (.js).
+
+  -> How we implement  JavaScript?
+  -> Internal way:
+        <html>
+         <body>
+            <script>
+              // JS code
+            </script>
+         </body>
+        </html>
+  -> External way:
+        script.js
+         js code
+
+         home.html
+         <html>
+         <body>
+           -----
+           <script src="./script.js"> </script>
+         </body>
+        </html>
+
+--> Comments: are used to describe a code (hide).
+
+-> Single line: //
+-> Multiple line: /*  */
+
+--> How we render data in JavaScript?
+
+document.write("---"); //display in a browser.
+
+** console.log("...."); // display in console (debug a code) and all errors of JavaScript
+is display on console.
+
+--> It is a case sensitive.
+
+--> Variables: are the temporary memory location which hold input data.
+
+--> In Vanilla JavaScript we use var keyword:
+
+	-> var varname=value;
+
+	var: Variant (any type).
+	varname: Name of the variable.
+	
+		-> Rules:
+		-> start with alphabets,$ or _
+		-> After that combination of [a-z,A-Z,0-9,_].
+		eg:
+		
+		var empName = "Sai"; //Camel Case
+		var emp_salary = 50000;
+
+--> ES6 introduced let and const keyword.
+
+	-> Let: It is basically defined the blocked and scoped variable. Available within a block only.
+		eg:
+		let empName="Sai";
+		
+	-> Const (blocked scope): Used to define constant. Fixed and readonly value.
+		eg:
+		
+		const API_URL = "http://abc.com/products";
+		
+-> Other programming languages:
+	
+	-> Datatype varname=value;
+	--> Datatype: In JavaScript datatype is allocated at runtime as per the variable value.
+	--> number, string, boolean, object, null, and undefined.
+	
+		eg:
+		
+		let age=23; //number
+		
+		How we check datatype?
+		
+		typeof variablename // find the datatype of a variable.
+		
+Operators: to perform operations.
+----------
+
+	-> Arithemtic (+,-,*,/,++,--,%).
+	-> Assignment (=,+=,-=,*=,%=,/=)
+	-> Relational (>,<,>=,<=)
+	-> Logical Operators: (&&, ||, !)
+	-> Comparision Operators: (==, !=, ===, !==)
+			==: Only check value
+			===: check both value and datatype
+
+eg: let x = 10;
+	let y = "10";
+	
+	if(x==y) (true)
+	if(x===y) (false)
+	
+-> ***Ternary Operator:
+	(condition > true : false)
+	
+	eg:
+	
+		let x = 10;
+		let y = 20;
+		
+		let result = x>y ? "x is greater than y" : "y is greate than x";
+		
+--> Conditions (selection) (return boolean)
+
+	-> if else
+	-> if elseif else
+	-> nested if
+	-> switch case
+	
+--> Pop boxes:
+	1. alert(): display a dialogue box.
+	2. confirm(): display a confirmation box.
+	3. prompt(): input data at runtime. But it accept the values in the form of string. To convert string into number:
+			-> parseInt()
+			-> eval()
+			-> Number()
+
+-> Task:
+
+	1. WAP to input a number and find it is even or odd ?
+	
+		let num1 = parseInt(prompt("Enter Number 1"));
+
+		let num2 = parseInt(prompt("Enter Number 2"));
+
+		let sum = num1 + num2;
+
+		alert("The Sum of Two Numbers is : "+sum);
+		
+	2. Nested If (input uname and password and check it):
+	   
+	   // Nested if:
+
+		let username = prompt("Enter Your Username : ");
+		let password = prompt("Enter Your Password : ");
+
+		if(username === "sairapolu94"){
+			if(password === "Aarushi@143"){
+			alert("Welcome : "+username);
+		}else{
+			alert("Enter correct Password!")
+		}
+	}
+	else{
+		alert("Enter correct Username!")
+	}
+	
+-> Assignment : if else if else and switch case.
+
+--> Looping (Iteration):
+    
+	 -> for loop : when we know the conditions:
+		syntax:
+		-------
+			for(let i=1; i<=10; i++){
+				console.log(i);
+			}
+	 -> while loop: Depend on the condition because it returns boolean.
+	 
+		syntax:
+		-------
+			while(condition){
+				statement
+			}
+	 -> do-while loop: The condition is checked at the end so the loop is executed atleast once.
+	 
+		syntax:
+		-------
+			do{
+			  statement
+			}
+			while(condition);
+			
+// For loop: factorial 
+
+let number = parseInt(prompt("Enter Factorial Number : "));
+
+let fact = 1;
+
+for (let i = number; i >=1; i--) {
+  fact*=i;
+}
+
+document.write("The factorial Number is : "+fact);
+	 
+Output:
+
+The factorial Number is : 120
+
+--> Assignment 2:
+	-> while
+	-> do-while
+	-> nested loop
+	
+--> Array: It is a group of elements which is used to store multiple values in single variable of any type.
+
+Syntax:
+------
+	let arrayname = [val, val1, val2,...]
+	
+	eg:
+	
+		let arr = [23,45,6,7,8]
+		arr[1]; //45
+		
+		-> To find the size of an array
+			arrayname.length
+			
+			for(let i=0; i<arr.length; i++){
+				console.log(arr[i]);
+			}
+			
+	--> forEach() loop: used only for an array. The loop is going on untill it find null.
+	
+	Syntax:
+	------
+		arrayname.forEach(function(value, index){
+			
+			//
+		})
+		
+		eg:
+		
+			let arr = [2,3,4,5,6];
+			
+			arr.forEach(function(val){
+				console.log(val);
+			})
+			
+Example:
+--------
+==> Task: WAP to find the sum and the largest value from an array.
+
+let arr = [2,34,5,6,77,8,9];
+
+let sum = 0;
+let larg = 0;
+
+arr.forEach(function(val){
+  console.log(val);
+  sum += val;
+  if(larg<val){
+    larg = val;
+  }
+})
+document.write("The Sum is : "+sum+" and the largest value is : "+larg);
+
+Output:
+------
+
+2,34,5,6,77,8,9
+
+The Sum is : 141 and the largest value is : 77
+
+--> Function: are used to perform some specific task in a program and they are used for reusability.
+
+function functionName(){
+	//code
+}
+or (expression)
+
+const functionName=function(){
+	//code
+}
+
+or (arrow function (ES 6))
+
+--> arrow function (=>):  the code is sort and concise.
+
+const functionName=()=>{
+	//code
+}
+
+//One line function:
+
+const add=(a,b)=> (a+b);
+
+** function should return a value and return only 1 value at a time.
+
+eg:
+
+	function fact(num) // defintion of the function
+	{
+		let fact-1;
+		
+		for(let i=num; i>=1; i--){
+			fact*=i;
+		}
+		return fact;
+	}
+	let result = fact(5); //Calling the function
+	let result1 = fact(6);
+	console.log(result);
+	console.log(result1);
+
+==> Event Handling: to perform a specific task.
+
+Events         Event Handler
+click 	       onClick
+dblclick	   
+mouseover
+mouseout
+keyup
+keydown
+keypress
+blur
+focus
+change
+load
+reload
+submit
+scroll
+
+---> document.bgColor = value(to change the bgcolor of the document).
+index.html:
+-----------
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Learning</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body onload="changeBgColor('purple')">
+      <h2>Welcome to JavaScript Program!</h2>
+      <button onclick="changeBgColor('red')" 
+      onmouseover="changeBgColor('green')"
+      onmouseout="changeBgColor('white')">Change Color</button>
+      <script src="script.js"></script>
+  </body>
+</html>
+
+script.js:
+----------
+
+// Function Event change the bgColor:
+
+function changeBgColor(val){
+  document.bgColor=val;
+}
+-------------------------------------------------------------------------------
+
+--> Example JavaScript Programs:
+--------------------------------
+
+document.write("Hello Geeks");
+
+console.log("Welcome to JS!");
+
+// Example of Variable and Datatype:
+
+let empName = "Sai Shankar Rapolu";
+
+console.log("The type of Variable is : "+typeof empName);
+
+
+Ternary Operator:
+
+let x = 100;
+let y = 20;
+		
+let result = x>y ? "x is greater than y" : "y is greate than x";
+
+document.write(result);
+
+If-else Statement:
+
+let num1 = parseInt(prompt("Enter Number 1"));
+
+let num2 = parseInt(prompt("Enter Number 2"));
+
+let sum = num1 + num2;
+
+alert("The Sum of Two Numbers is : "+sum);
+
+
+Nested if:
+
+let username = prompt("Enter Your Username : ");
+let password = prompt("Enter Your Password : ");
+
+if(username === "sairapolu94"){
+  if(password === "Aarushi@143"){
+    alert("Welcome : "+username);
+  }else{
+    alert("Enter correct Password!")
+  }
+}
+else{
+  alert("Enter correct Username!")
+}
+
+
+For loop: factorial 
+
+let number = parseInt(prompt("Enter Factorial Number : "));
+
+let fact = 1;
+
+for (let i = number; i >=1; i--) {
+  fact*=i;
+}
+
+document.write("The factorial Number is : "+fact);
+
+Array by using forEach:
+
+let arr = [2,34,5,6,77,8,9];
+
+let sum = 0;
+let larg = 0;
+
+arr.forEach(function(val){
+  console.log(val);
+  sum += val;
+  if(larg<val){
+    larg = val;
+  }
+})
+document.write("The Sum is : "+sum+" and the largest value is : "+larg);
+
+Function:
+
+function fact(num) // defintion of the function
+	{
+		let fact=1;
+		
+		for(let i=num; i>=1; i--){
+			fact*=i;
+		}
+		return fact;
+	}
+	let result = fact(5); //Calling the function
+	
+	let result1 = fact(6);
+	
+	console.log(result);
+	
+	console.log(result1);
